@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://user-manager-app-bk.vercel.app";
+const API_URL = "https://user-manager-app-bk.vercel.app";
 
 export const createUser = (data) => {
   return axios.post(API_URL, data);

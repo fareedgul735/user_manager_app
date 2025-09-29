@@ -6,7 +6,7 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import ButtonWrap from "../components/buttons/Button";
 import { Link } from "react-router";
 
-const API_URL = "http://user-manager-app-bk.vercel.app";
+const API_URL = "https://user-manager-app-bk.vercel.app";
 
 function UsersList() {
   const [users, setUsers] = useState([]);
