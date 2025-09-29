@@ -2,23 +2,86 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #1677ff;
-  padding: 15px 30px;
+  padding: 15px 40px;
+  background: linear-gradient(90deg, #4f46e5, #3b82f6);
+  color: white;
+  position: relative;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .logo {
-  color: white;
-  margin: 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.logo:hover {
+  transform: scale(1.1);
 }
 
 .navLinks {
-  list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  list-style: none;
 }
 
-.navLinks a {
-  color: white;
+.navLinks li a {
   text-decoration: none;
+  color: white;
+  font-size: 1.1rem;
   font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLinks li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  height: 2px;
+  width: 0%;
+  background: white;
+  transition: width 0.3s ease;
+}
+.navLinks li a:hover::after {
+  width: 100%;
+}
+.navLinks li a:hover {
+  color: #facc15;
+}
+
+.menuBtn {
+  display: none;
+  color: white;
+  font-size: 1.5rem;
+}
+
+.drawerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.drawerLinks li a {
+  text-decoration: none;
+  color: #1e293b;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+.drawerLinks li a:hover {
+  color: #3b82f6;
+}
+
+@media (max-width: 768px) {
+  .navLinks {
+    display: none;
+  }
+  .menuBtn {
+    display: block;
+  }
 }

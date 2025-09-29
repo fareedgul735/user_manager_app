@@ -1,3 +1,104 @@
 .container {
-  padding: 20px;
+  padding: 50px;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #fdfdfd, #f0f9ff);
+  text-align: center;
+  animation: fadeIn 1s ease forwards;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: #1e3a8a;
+  margin-bottom: 10px;
+  animation: slideDown 1s ease forwards;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #475569;
+  margin-bottom: 40px;
+}
+
+.blogGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+  animation: fadeUp 1s ease forwards;
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  color: #2563eb;
+  margin-bottom: 10px;
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 15px;
+}
+
+.readMore {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.readMore:hover {
+  background: #1e40af;
+  transform: translateX(5px);
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

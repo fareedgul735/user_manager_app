@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router";
 import { getUserById, updateUser } from "../service/Service";
 import ButtonWrap from "../components/buttons/Button";
 import InputWrap from "../components/inputs/Input";
+import styles from "./AddUser.module.css";
 
 const AddUser = () => {
   const [form] = Form.useForm();
@@ -36,15 +37,15 @@ const AddUser = () => {
   };
 
   return (
-    <div style={{ padding: 30 }}>
+    <div className={styles.container}>
       {contextHolder}
-      <h2>Edit User</h2>
+      <h2 className={styles.title}>Edit User</h2>
 
       <Form
         form={form}
         layout="inline"
         onFinish={onFinish}
-        style={{ marginBottom: 20 }}
+        className={styles.form}
       >
         <Form.Item
           name="name"
@@ -69,7 +70,7 @@ const AddUser = () => {
 
         <Form.Item>
           <ButtonWrap type="primary" htmlType="submit">
-            Update User
+            Edit User
           </ButtonWrap>
         </Form.Item>
       </Form>

@@ -1,0 +1,56 @@
+.container {
+  padding: 40px;
+  background: linear-gradient(135deg, #f0f4ff, #e0f2fe);
+  min-height: 100vh;
+}
+
+.customTable .ant-table {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  background: white;
+}
+
+.customTable .ant-table-thead > tr > th {
+  background: #2563eb;
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 14px;
+  border-bottom: none;
+}
+
+.customTable .ant-table-tbody > tr > td {
+  padding: 14px;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #374151;
+  transition: background 0.3s ease;
+}
+
+.customTable .ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+.customTable .ant-table-tbody > tr:nth-child(odd) > td {
+  background: #fafafa;
+}
+
+.customTable .ant-space {
+  justify-content: center;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+  .customTable .ant-table-thead > tr > th {
+    font-size: 0.9rem;
+    padding: 10px;
+  }
+  .customTable .ant-table-tbody > tr > td {
+    font-size: 0.85rem;
+    padding: 10px;
+  }
+}

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import { createUser } from "../service/Service";
 import ButtonWrap from "../components/buttons/Button";
 import InputWrap from "../components/inputs/Input";
+import styles from "./AddUser.module.css";
 
 const AddUser = () => {
   const [form] = Form.useForm();
@@ -21,15 +22,15 @@ const AddUser = () => {
   };
 
   return (
-    <div style={{ padding: 30 }}>
+    <div className={styles.container}>
       {contextHolder}
-      <h2>Add User</h2>
+      <h2 className={styles.title}>Add User</h2>
 
       <Form
         form={form}
         layout="inline"
         onFinish={onFinish}
-        style={{ marginBottom: 20 }}
+        className={styles.form}
       >
         <Form.Item
           name="name"

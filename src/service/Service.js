@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:5000/users";
+const API_URL = "http://user-manager-app-bk.vercel.app";
 
 export const createUser = (data) => {
   return axios.post(API_URL, data);
@@ -18,5 +18,4 @@ export const getUsers = () => {
   return axios.get(API_URL);
 };
 
-export const getUserById = (id) =>
-  axios.get(`http://localhost:5000/users/${id}`);
+export const getUserById = (id) => axios.get(`${API_URL}/${id}`);

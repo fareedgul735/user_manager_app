@@ -6,14 +6,23 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import ButtonWrap from "../components/buttons/Button";
 import { Link } from "react-router";
 
-const API_URL = "http://localhost:5000/users";
+const API_URL = "http://user-manager-app-bk.vercel.app";
 
 function UsersList() {
   const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [messageApi, contextHolder] = message.useMessage();
+
   const fetchUsers = async () => {
-    const res = await getUsers(API_URL);
-    setUsers(res.data);
+    try {
+      setLoading(true);
+      const res = await getUsers(API_URL);
+      setUsers(res.data);
+    } catch (error) {
+      messageApi.error("Failed to fetch users");
+    } finally {
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -29,6 +38,7 @@ function UsersList() {
       messageApi.error("Delete failed");
     }
   };
+
   const columns = [
     { title: "Name", dataIndex: "name", key: "name" },
     { title: "Email", dataIndex: "email", key: "email" },
@@ -50,10 +60,17 @@ function UsersList() {
       ),
     },
   ];
+
   return (
     <div className={styles.container}>
       {contextHolder}
-      <Table dataSource={users} columns={columns} rowKey="_id" />
+      <Table
+        dataSource={users}
+        columns={columns}
+        rowKey="_id"
+        loading={loading}
+        className={styles.customTable}
+      />
     </div>
   );
 }
