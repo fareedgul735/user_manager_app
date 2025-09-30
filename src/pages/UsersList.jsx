@@ -6,8 +6,6 @@ import { DeleteOutlined, EditOutlined } from "@ant-design/icons";
 import ButtonWrap from "../components/buttons/Button";
 import { Link } from "react-router";
 
-const API_URL = "https://usermanagerappbk-production.up.railway.app/users";
-
 function UsersList() {
   const [users, setUsers] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -16,7 +14,7 @@ function UsersList() {
   const fetchUsers = async () => {
     try {
       setLoading(true);
-      const res = await getUsers(API_URL);
+      const res = await getUsers();
       setUsers(res.data);
     } catch (error) {
       messageApi.error("Failed to fetch users");
